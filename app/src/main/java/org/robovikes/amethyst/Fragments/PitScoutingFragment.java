@@ -24,15 +24,12 @@ import org.robovikes.amethyst.databinding.FragmentPitBinding;
 
 public class PitScoutingFragment extends Fragment {
 
-<<<<<<< Updated upstream
     SeekBar seekBar;
     TextView textView;
 
     private Spinner deviceSpinner;
     private Spinner teamSpinner;
 
-=======
->>>>>>> Stashed changes
     private FragmentPitBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -40,8 +37,6 @@ public class PitScoutingFragment extends Fragment {
 
         binding = FragmentPitBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-
-<<<<<<< Updated upstream
 
         seekBar = (SeekBar) root.findViewById(R.id. seekBar);
         textView = (TextView) root.findViewById(R.id.textViewRating);
@@ -85,8 +80,6 @@ public class PitScoutingFragment extends Fragment {
         });
 
 
-=======
->>>>>>> Stashed changes
         final Handler handler = new Handler(Looper.getMainLooper());
         handler.postDelayed(new Runnable() {
             @Override
