@@ -1,7 +1,5 @@
 package org.robovikes.amethyst.Fragments.Create;
 
-import android.content.res.ColorStateList;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -18,18 +16,14 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
+import org.robovikes.amethyst.DataManager;
 import org.robovikes.amethyst.R;
 import org.robovikes.amethyst.databinding.FragmentCreateEventBinding;
-import org.robovikes.amethyst.databinding.FragmentEventsBinding;
 
 public class Event extends Fragment {
 
     private FragmentCreateEventBinding binding;
-    FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference events = database.getReference("events");
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
@@ -56,11 +50,12 @@ public class Event extends Fragment {
                 String name = eventName.getText().toString().trim();
                 String start = startDate.getText().toString().trim();
                 String end = endDate.getText().toString().trim();
+                DataManager DataManager = new DataManager();
                 if (!name.equals("") && !start.equals("") && !end.equals("")) {
                     if (!name.contains(".") && !name.contains("#") && !name.contains("$") && !name.contains("[") && !name.contains("]") && !start.contains(".") && !start.contains("#") && !start.contains("$") && !start.contains("[") && !start.contains("]") && !end.contains(".") && !end.contains("#") && !end.contains("$") && !end.contains("[") && !end.contains("]")) {
                         eventName.setError("This field is required");
                         System.out.println("NON");
-                        createEvent(name, start, end);
+                        DataManager.createEvent(name, start, end);
                         eventName.setText(null);
                         startDate.setText(null);
                         endDate.setText(null);
@@ -90,10 +85,6 @@ public class Event extends Fragment {
             }
         });
         return root;
-    }
-    public void createEvent(String name, String startDate, String endDate) {
-        events.child(name).child("start").setValue(startDate);
-        events.child(name).child("end").setValue(endDate);
     }
     @Override
     public void onDestroyView() {

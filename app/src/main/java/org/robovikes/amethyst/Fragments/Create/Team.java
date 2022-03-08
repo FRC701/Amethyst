@@ -16,7 +16,6 @@ import androidx.navigation.ui.NavigationUI;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import org.robovikes.amethyst.R;
-import org.robovikes.amethyst.databinding.FragmentCreateEventBinding;
 import org.robovikes.amethyst.databinding.FragmentCreateTeamBinding;
 
 public class Team extends Fragment {

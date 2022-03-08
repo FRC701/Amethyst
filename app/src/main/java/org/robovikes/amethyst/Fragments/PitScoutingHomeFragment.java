@@ -6,9 +6,7 @@ import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.SeekBar;
-import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -83,9 +81,6 @@ import org.robovikes.amethyst.databinding.FragmentPitHomeBinding;
                     NavController navController = Navigation.findNavController(getActivity(), R.id.nav_host_fragment_content_main);
                     BottomNavigationView scoutingBar = root.findViewById(R.id.scouting_bar);
                     NavigationUI.setupWithNavController(scoutingBar, navController);
-
-
-
                 }
             }, 10);
             return root;

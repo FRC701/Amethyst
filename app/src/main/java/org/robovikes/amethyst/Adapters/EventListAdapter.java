@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+
 import org.robovikes.amethyst.R;
 
 import java.util.ArrayList;
@@ -14,9 +15,9 @@ public class EventListAdapter extends ArrayAdapter {
 
     public Activity context;
 
-    private ArrayList<String> name;
-    private ArrayList<String> start;
-    private ArrayList<String> end;
+    private ArrayList<String> name = new ArrayList<>();
+    private ArrayList<String> start = new ArrayList<>();;
+    private ArrayList<String> end = new ArrayList<>();;
     public EventListAdapter(Activity context, ArrayList<String> name, ArrayList<String> start, ArrayList<String> end) {
         super(context, R.layout.events_layout, name);
         this.context = context;
